@@ -76,7 +76,7 @@ module.exports = {
   css: {
     // 默认情况下，只有 *.module.[ext] 结尾的文件才会被视作 CSS Modules 模块。设置为 true 后你就可以去掉文件名中的 .
     // module 并将所有的 *.(css|scss|sass|less|styl(us)?) 文件视为 CSS Modules 模块。
-    modules: false,
+    requireModuleExtension: false,
     // 是否将组件中的 CSS 提取至一个独立的 CSS 文件中 (而不是动态注入到 JavaScript 中的 inline 代码)。
     extract: true,
     // 是否构建样式地图，false 将提高构建速度
@@ -85,16 +85,16 @@ module.exports = {
     loaderOptions: {
       css: {
         // 这里的选项会传递给 css-loader
-      },
-      postcss: {
-        // 这里的选项会传递给 postcss-loader
       }
+      // postcss: {
+      //   // 这里的选项会传递给 postcss-loader
+      // }
     }
   },
   // 所有 webpack-dev-server 的选项都支持
   devServer: {
     open: true,
-    host: '192.168.32.2',
+    host: 'localhost',
     port: 3000,
     https: false,
     hotOnly: true,
